@@ -1,0 +1,44 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "magento.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ template "magento.fullname" . }}
+    helm.sh/chart: {{ template "magento.chart" . }}
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+  annotations:
+    {{- if .Values.ingress.certManager }}
+    cert-manager.io/issuer: "letsencrypt-staging"
+    {{- end }}
+    {{- range $key, $value := .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  tls:
+  {{- range .Values.ingress.hosts }}
+  {{- if .tls }}
+    - hosts:
+    {{- if .tlsHosts }}
+    {{- range $host := .tlsHosts }}
+        - {{ $host }}
+    {{- end }}
+    {{- else }}
+        - {{ .name }}
+    {{- end }}
+      secretName: {{ .tlsSecret }}
+    {{- end }}
+  {{- end }}
+
+  rules:
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .name }}
+      http:
+        paths:
+          - path: {{ default "/" .path }}
+            backend:
+              serviceName: {{ template "magento.fullname" $ }}
+              servicePort: http
+  {{- end }}
+{{- end }}

@@ -1,0 +1,103 @@
+namespace/mimagento created
+issuer.cert-manager.io/letsencrypt-staging created
+issuer.cert-manager.io/letsencrypt-prod created
+NAME: mimagento
+LAST DEPLOYED: Mon Jun  8 00:39:43 2020
+NAMESPACE: mimagento
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the Magento URL by running:
+
+  echo "Store URL: http://127.0.0.1:8080/"
+  echo "Admin URL: http://127.0.0.1:8080/admin"
+  kubectl port-forward --namespace mimagento svc/mimagento 8080:80
+
+2. Get your Magento login credentials by running:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace mimagento mimagento -o jsonpath="{.data.magento-password}" | base64 --decode)
+event "cm-acme-http-solver-lzn5v.16166aa7cc0dd9af" deleted
+event "cm-acme-http-solver-lzn5v.16166aa8655d07db" deleted
+event "cm-acme-http-solver-lzn5v.16166aa86b142e4e" deleted
+event "cm-acme-http-solver-lzn5v.16166aa89bf3e625" deleted
+event "cm-acme-http-solver-lzn5v.16166aadf88fa822" deleted
+event "cm-acme-http-solver-qscwl.16166aa7ddab72c6" deleted
+event "cm-acme-http-solver-qscwl.16166aad08319a05" deleted
+event "cm-acme-http-solver-qscwl.16166aae029f315b" deleted
+event "magento.local-tls-356791598-1624083280-3856447113.16166aa7bdf75923" deleted
+event "magento.local-tls-356791598-1624083280-3856447113.16166aa7dda831a4" deleted
+event "magento.local-tls-356791598-1624083280-3856447113.16166aadf5671c46" deleted
+event "magento.local-tls-356791598-1624083280.16166aa7b165ac06" deleted
+event "magento.local-tls-356791598-1624083280.16166aae32ab7f71" deleted
+event "magento.local-tls-356791598.16166aa7591c3f6b" deleted
+event "magento.local-tls-356791598.16166aa75bedc01e" deleted
+event "magento.local-tls-356791598.16166aae37434ca2" deleted
+event "magento.local-tls.16166aa751248f6e" deleted
+event "magento.local-tls.16166aa756df9538" deleted
+event "magento.local-tls.16166aae3c7b7dd8" deleted
+event "mimagento-64c565f8c9-h9jds.16166aa719237f4b" deleted
+event "mimagento-64c565f8c9-h9jds.16166aa82c57e52b" deleted
+event "mimagento-64c565f8c9-h9jds.16166aa83501fe88" deleted
+event "mimagento-64c565f8c9-h9jds.16166aa846ee94d1" deleted
+event "mimagento-64c565f8c9-h9jds.16166ab00d064891" deleted
+event "mimagento-64c565f8c9-h9jds.16166b03458ba5ab" deleted
+event "mimagento-64c565f8c9.16166aa718885b62" deleted
+event "mimagento-apache.16166aa70eb898ce" deleted
+event "mimagento-apache.16166aa70f2971b7" deleted
+event "mimagento-apache.16166aa70ffb0c1f" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aa71995318d" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aa812595099" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aa82835b174" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aa845a082fe" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aae048d01e1" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aae0be5edda" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c-8r629.16166aae2389cb1b" deleted
+event "mimagento-elasticsearch-coordinating-only-6745b9d6c.16166aa71865d5f9" deleted
+event "mimagento-elasticsearch-coordinating-only.16166aa716c8b571" deleted
+event "mimagento-elasticsearch-data-0.16166aa71c654b4c" deleted
+event "mimagento-elasticsearch-data-0.16166aa81fbbf089" deleted
+event "mimagento-elasticsearch-data-0.16166aa830a0b9a3" deleted
+event "mimagento-elasticsearch-data-0.16166aa84633cae3" deleted
+event "mimagento-elasticsearch-data-0.16166aae82c87a9d" deleted
+event "mimagento-elasticsearch-data-0.16166aae881d836f" deleted
+event "mimagento-elasticsearch-data-0.16166aae9585c0ef" deleted
+event "mimagento-elasticsearch-data.16166aa71b39a30c" deleted
+event "mimagento-elasticsearch-master-0.16166aa71dd27154" deleted
+event "mimagento-elasticsearch-master-0.16166aa77ba55884" deleted
+event "mimagento-elasticsearch-master-0.16166aa786159303" deleted
+event "mimagento-elasticsearch-master-0.16166aa798879ef4" deleted
+event "mimagento-elasticsearch-master-0.16166aabf23ddaf2" deleted
+event "mimagento-elasticsearch-master-0.16166aabf6db4eb9" deleted
+event "mimagento-elasticsearch-master-0.16166aac0511631f" deleted
+event "mimagento-elasticsearch-master.16166aa71cd64ad3" deleted
+event "mimagento-magento.16166aa70f04f366" deleted
+event "mimagento-magento.16166aa710597cdf" deleted
+event "mimagento-magento.16166aa712061780" deleted
+event "mimagento.16166aa716c13d0f" deleted
+event "mimagento.16166aa723cbbfd7" deleted
+event "mimagento.16166aa724f827cc" deleted
+event "mimagento.16166aaa95231829" deleted
+event "mimagento.16166aaa95d0ba68" deleted
+event "mimagento.16166aaa964e29d0" deleted
+event "mimagento.16166aad0669d4c8" deleted
+event "mimagento.16166ab8cc2e826f" deleted
+Release "mimagento" has been upgraded. Happy Helming!
+NAME: mimagento
+LAST DEPLOYED: Mon Jun  8 00:50:20 2020
+NAMESPACE: mimagento
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+1. Get the Magento URL by running:
+
+  echo "Store URL: http://127.0.0.1:8080/"
+  echo "Admin URL: http://127.0.0.1:8080/admin"
+  kubectl port-forward --namespace mimagento svc/mimagento 8080:80
+
+2. Get your Magento login credentials by running:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace mimagento mimagento -o jsonpath="{.data.magento-password}" | base64 --decode)

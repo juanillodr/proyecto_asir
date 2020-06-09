@@ -1,0 +1,17 @@
+Error from server (AlreadyExists): namespaces "repo-local" already exists
+Error from server (AlreadyExists): error when creating "sc.yaml": storageclasses.storage.k8s.io "standard" already exists
+Error from server (AlreadyExists): error when creating "pv.yaml": persistentvolumes "local-pv" already exists
+NAME: repo-local
+LAST DEPLOYED: Fri May 22 11:13:01 2020
+NAMESPACE: repo-local
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+Get the ChartMuseum URL by running:
+
+  export POD_NAME=$(kubectl get pods --namespace repo-local -l "app=chartmuseum" -l "release=repo-local" -o jsonpath="{.items[0].metadata.name}")
+  echo http://127.0.0.1:8080/
+  kubectl port-forward $POD_NAME 8080:8080 --namespace repo-local

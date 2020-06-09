@@ -1,0 +1,25 @@
+Error from server (NotFound): ingresses.extensions "bbdd" not found
+Error: uninstall: Release not loaded: bbdd: release: not found
+event "bbdd-mariadb-galera-0.16145de0f292468c" deleted
+event "bbdd-mariadb-galera-0.16147d75e019d6e6" deleted
+event "bbdd-mariadb-galera-0.16147d75e031eab1" deleted
+event "bbdd-mariadb-galera-0.16147d77d5b1c5a3" deleted
+event "bbdd-mariadb-galera-0.16147d7955c965e8" deleted
+event "bbdd-mariadb-galera-0.16147d7d37888600" deleted
+event "bbdd-mariadb-galera-0.16147d7d5b3605bf" deleted
+event "bbdd-mariadb-galera-1.16145dcaf50f785d" deleted
+event "bbdd-mariadb-galera-1.16146cb967b01743" deleted
+event "bbdd-mariadb-galera-1.16147d75dda3d110" deleted
+event "bbdd-mariadb-galera-1.16147d75dda68d2b" deleted
+event "bbdd-mariadb-galera-1.16147d793db33790" deleted
+event "bbdd-mariadb-galera-1.16147d796a92f2d6" deleted
+event "bbdd-mariadb-galera-1.16147d79705a4749" deleted
+event "bbdd-mariadb-galera-1.16147d7a0b8c41f6" deleted
+event "bbdd-mariadb-galera-1.16147d7a8c9af9b2" deleted
+event "bbdd-mariadb-galera-1.16147d7c5ce09753" deleted
+event "bbdd-mariadb-galera-2.16147d75dd18daed" deleted
+event "bbdd-mariadb-galera-2.16147d75dd21b3b4" deleted
+event "bbdd-mariadb-galera-2.16147d76e5420157" deleted
+event "bbdd-mariadb-galera-2.16147d77c7129e2b" deleted
+event "bbdd-mariadb-galera-2.16147d792e440cf1" deleted
+Error from server (NotFound): namespaces "bbdd" not found

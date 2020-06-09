@@ -1,0 +1,80 @@
+namespace/miopencart created
+issuer.cert-manager.io/letsencrypt-staging created
+issuer.cert-manager.io/letsencrypt-prod created
+NAME: miopencart
+LAST DEPLOYED: Tue Jun  9 16:30:57 2020
+NAMESPACE: miopencart
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the OpenCart URL by running:
+
+  echo "URL: http://127.0.0.1:8080/"
+  echo "Administration URL: http://127.0.0.1:8080/admin"
+  kubectl port-forward --namespace miopencart svc/miopencart 8080:80
+
+2. Get your OpenCart login credentials by running:
+
+  echo Admin Username: user
+  echo Admin Password: $(kubectl get secret --namespace miopencart miopencart -o jsonpath="{.data.opencart-password}" | base64 --decode)
+event "cm-acme-http-solver-dmk79.1616ed25316e8456" deleted
+event "cm-acme-http-solver-dmk79.1616ed254980ba0d" deleted
+event "cm-acme-http-solver-nc8jm.1616ed252787d1a4" deleted
+event "cm-acme-http-solver-nc8jm.1616ed30ba055e8b" deleted
+event "cm-acme-http-solver-nc8jm.1616ed30c92c5549" deleted
+event "cm-acme-http-solver-nc8jm.1616ed30fe4adf7f" deleted
+event "cm-acme-http-solver-nc8jm.1616ed3aa218c680" deleted
+event "cm-acme-http-solver-nl2m2.1616ed253c11c37f" deleted
+event "cm-acme-http-solver-nl2m2.1616ed254a0d08e5" deleted
+event "cm-acme-http-solver-xqlth.1616ed2550f58635" deleted
+event "cm-acme-http-solver-xqlth.1616ed2dafbd9e18" deleted
+event "cm-acme-http-solver-xqlth.1616ed3a96f510d7" deleted
+event "miopencart-87596f968-txblz.1616ed244771aa6e" deleted
+event "miopencart-87596f968-txblz.1616ed24afb2f9d2" deleted
+event "miopencart-87596f968-txblz.1616ed24b674e625" deleted
+event "miopencart-87596f968-txblz.1616ed24c826c8d9" deleted
+event "miopencart-87596f968-txblz.1616ed2c2f421c64" deleted
+event "miopencart-87596f968-txblz.1616ed420a3722a4" deleted
+event "miopencart-87596f968-txblz.1616ed424cc7d8bd" deleted
+event "miopencart-87596f968.1616ed244637d275" deleted
+event "miopencart-opencart.1616ed2440f43d6f" deleted
+event "miopencart-opencart.1616ed2441fb0861" deleted
+event "miopencart-opencart.1616ed2442f9ccee" deleted
+event "miopencart.1616ed244541eb16" deleted
+event "miopencart.1616ed244a817b2b" deleted
+event "miopencart.1616ed244c778e2f" deleted
+event "miopencart.1616ed27ea5022d1" deleted
+event "miopencart.1616ed27eabd2e94" deleted
+event "miopencart.1616ed27eb258f54" deleted
+event "miopencart.1616ed2dafa23264" deleted
+event "miopencart.1616ed32aa687751" deleted
+event "secret-opencart-1528589000-848612225-4294108260.1616ed2515a19479" deleted
+event "secret-opencart-1528589000-848612225-4294108260.1616ed25314deced" deleted
+event "secret-opencart-1528589000-848612225-4294108260.1616ed3a9204ee72" deleted
+event "secret-opencart-1528589000-848612225.1616ed2504b01d2f" deleted
+event "secret-opencart-1528589000-848612225.1616ed3ad041c969" deleted
+event "secret-opencart-1528589000.1616ed246f0fd024" deleted
+event "secret-opencart-1528589000.1616ed2471479be6" deleted
+event "secret-opencart-1528589000.1616ed3ad1ea3e01" deleted
+event "secret-opencart.1616ed246b98fc54" deleted
+event "secret-opencart.1616ed246d76a2ea" deleted
+event "secret-opencart.1616ed3ad43bbe35" deleted
+Release "miopencart" has been upgraded. Happy Helming!
+NAME: miopencart
+LAST DEPLOYED: Tue Jun  9 16:41:48 2020
+NAMESPACE: miopencart
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+1. Get the OpenCart URL by running:
+
+  echo "URL: http://127.0.0.1:8080/"
+  echo "Administration URL: http://127.0.0.1:8080/admin"
+  kubectl port-forward --namespace miopencart svc/miopencart 8080:80
+
+2. Get your OpenCart login credentials by running:
+
+  echo Admin Username: user
+  echo Admin Password: $(kubectl get secret --namespace miopencart miopencart -o jsonpath="{.data.opencart-password}" | base64 --decode)

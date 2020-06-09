@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  creationTimestamp: "2020-05-28T18:43:37Z"
+  generation: 3
+  managedFields:
+  - apiVersion: networking.k8s.io/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:loadBalancer:
+          f:ingress: {}
+    manager: nginx-ingress-controller
+    operation: Update
+    time: "2020-05-28T18:44:02Z"
+  - apiVersion: extensions/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubernetes.io/ingress.class: {}
+      f:spec:
+        f:rules: {}
+        f:tls: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-28T19:30:10Z"
+  name: joomla
+  namespace: default
+  resourceVersion: "2784193"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/joomla
+  uid: 83db5ab5-283c-4e42-990c-9e5193889fec
+spec:
+  rules:
+  - host: joomla.mfv-cloud.store
+    http:
+      paths:
+      - backend:
+          serviceName: joomla
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - joomla.mfv-cloud.store
+    secretName: quickstart-example-tls
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.18.201

@@ -1,0 +1,31 @@
+{{- if .Values.autoscaling.enabled -}}
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ template "drupal.fullname" . }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ template "drupal.fullname" . }}
+  minReplicas: {{ .Values.autoscaling.minReplicas | default 2 }}
+  maxReplicas: {{ .Values.autoscaling.maxReplicas | default 4 }}
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.autoscaling.cpu | default 60 }}
+  - type: Object
+    object:
+      metric:
+        name: requests-per-second
+      describedObject:
+        apiVersion: networking.k8s.io/v1beta1
+        kind: Ingress
+        name: main-route
+      target:
+        type: Value
+        value: {{ .Values.autoscaling.requests | default 3000 }}
+{{- end }}

@@ -1,0 +1,45 @@
+namespace/maria created
+issuer.cert-manager.io/letsencrypt-staging created
+issuer.cert-manager.io/letsencrypt-prod created
+NAME: maria
+LAST DEPLOYED: Tue Jun  9 15:37:45 2020
+NAMESPACE: maria
+STATUS: deployed
+REVISION: 1
+NOTES:
+Please be patient while the chart is being deployed
+
+Tip:
+
+  Watch the deployment status using the command: kubectl get pods -w --namespace maria -l release=maria
+
+Services:
+
+  echo Master: maria-mariadb.maria.svc.cluster.local:3306
+  echo Slave:  maria-mariadb-slave.maria.svc.cluster.local:3306
+
+Administrator credentials:
+
+  Username: root
+  Password : $(kubectl get secret --namespace maria maria-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 --decode)
+
+To connect to your database:
+
+  1. Run a pod that you can use as a client:
+
+      kubectl run maria-mariadb-client --rm --tty -i --restart='Never' --image  docker.io/bitnami/mariadb:10.1.45-debian-10-r19 --namespace maria --command -- bash
+
+  2. To connect to master service (read/write):
+
+      mysql -h maria-mariadb.maria.svc.cluster.local -uroot -p bitnami_joomla
+
+  3. To connect to slave service (read-only):
+
+      mysql -h maria-mariadb-slave.maria.svc.cluster.local -uroot -p bitnami_joomla
+
+To upgrade this helm chart:
+
+  1. Obtain the password as described on the 'Administrator credentials' section and set the 'rootUser.password' parameter as shown below:
+
+      ROOT_PASSWORD=$(kubectl get secret --namespace maria maria-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 --decode)
+      helm upgrade maria bitnami/mariadb --set rootUser.password=$ROOT_PASSWORD

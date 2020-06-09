@@ -1,0 +1,29 @@
+env:
+  open:
+    STORAGE: local
+    DISABLE_API: false
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 8Gi
+  storageClass: standard
+ports: 
+  name: http
+  nodePort: 31890
+  port: 8080
+  protocol: TCP
+  targetPort: http
+            
+  ## A manually managed Persistent Volume and Claim
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  # existingClaim:
+
+  ## Chartmuseum data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"

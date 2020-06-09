@@ -1,0 +1,100 @@
+namespace/midrupal created
+issuer.cert-manager.io/letsencrypt-staging created
+issuer.cert-manager.io/letsencrypt-prod created
+NAME: midrupal
+LAST DEPLOYED: Sun Jun  7 17:46:33 2020
+NAMESPACE: midrupal
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+*******************************************************************
+*** PLEASE BE PATIENT: Drupal may take a few minutes to install ***
+*******************************************************************
+
+1. Get the Drupal URL:
+
+  echo "Drupal URL: http://127.0.0.1:8080/"
+  kubectl port-forward --namespace midrupal svc/midrupal 8080:80
+
+2. Login with the following credentials
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace midrupal midrupal -o jsonpath="{.data.drupal-password}" | base64 --decode)
+event "cm-acme-http-solver-9mt9n.1616541caa6b30d1" deleted
+event "cm-acme-http-solver-9mt9n.161654220806fc02" deleted
+event "cm-acme-http-solver-cw4fg.1616541c8b94db43" deleted
+event "cm-acme-http-solver-cw4fg.1616541cfc8a4ff2" deleted
+event "cm-acme-http-solver-cw4fg.1616541d028b49e6" deleted
+event "cm-acme-http-solver-cw4fg.1616541d22e3de2c" deleted
+event "cm-acme-http-solver-cw4fg.16165421fe07ce5d" deleted
+event "midrupal-67b575949f-lpkjs.1616541b4c1f9842" deleted
+event "midrupal-67b575949f-lpkjs.1616541b4e5acd5a" deleted
+event "midrupal-67b575949f-lpkjs.1616541b952b21d4" deleted
+event "midrupal-67b575949f-lpkjs.1616541be029e30b" deleted
+event "midrupal-67b575949f-lpkjs.1616541be6ac2fcf" deleted
+event "midrupal-67b575949f-lpkjs.1616541bf350f7a4" deleted
+event "midrupal-67b575949f-lpkjs.1616542372c3725f" deleted
+event "midrupal-67b575949f-lpkjs.1616542e54b2753e" deleted
+event "midrupal-67b575949f.1616541b4b35bf3d" deleted
+event "midrupal-drupal.1616541b429432d3" deleted
+event "midrupal-drupal.1616541b43570c59" deleted
+event "midrupal-drupal.1616541b49cc333d" deleted
+event "midrupal.1616541b49c8f89c" deleted
+event "midrupal.1616541b55db0100" deleted
+event "midrupal.1616541b587a33c1" deleted
+event "midrupal.161654236e3736a3" deleted
+event "secret-midrupal-3891253578-1464108065-3869614152.1616541c4332c557" deleted
+event "secret-midrupal-3891253578-1464108065-3869614152.1616541caad24462" deleted
+event "secret-midrupal-3891253578-1464108065-3869614152.16165421ffb93cd1" deleted
+event "secret-midrupal-3891253578-1464108065.1616541c0658c49d" deleted
+event "secret-midrupal-3891253578-1464108065.161654223889a678" deleted
+event "secret-midrupal-3891253578.1616541b99e9da93" deleted
+event "secret-midrupal-3891253578.161654223a69e9fc" deleted
+event "secret-midrupal.1616541b971c9e80" deleted
+event "secret-midrupal.1616541b99f21e25" deleted
+event "secret-midrupal.161654223cde3093" deleted
+Release "midrupal" has been upgraded. Happy Helming!
+NAME: midrupal
+LAST DEPLOYED: Sun Jun  7 17:59:16 2020
+NAMESPACE: midrupal
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+*******************************************************************
+*** PLEASE BE PATIENT: Drupal may take a few minutes to install ***
+*******************************************************************
+
+1. Get the Drupal URL:
+
+  echo "Drupal URL: http://127.0.0.1:8080/"
+  kubectl port-forward --namespace midrupal svc/midrupal 8080:80
+
+2. Login with the following credentials
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace midrupal midrupal -o jsonpath="{.data.drupal-password}" | base64 --decode)
+event "midrupal-6766554fc7-m6hdr.161654eb918b244f" deleted
+event "midrupal-6766554fc7-m6hdr.161654ebbe13cbd1" deleted
+Release "midrupal" has been upgraded. Happy Helming!
+NAME: midrupal
+LAST DEPLOYED: Sun Jun  7 23:43:58 2020
+NAMESPACE: midrupal
+STATUS: deployed
+REVISION: 3
+TEST SUITE: None
+NOTES:
+*******************************************************************
+*** PLEASE BE PATIENT: Drupal may take a few minutes to install ***
+*******************************************************************
+
+1. Get the Drupal URL:
+
+  echo "Drupal URL: http://127.0.0.1:8080/"
+  kubectl port-forward --namespace midrupal svc/midrupal 8080:80
+
+2. Login with the following credentials
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace midrupal midrupal -o jsonpath="{.data.drupal-password}" | base64 --decode)

@@ -1,0 +1,88 @@
+namespace/joomla created
+issuer.cert-manager.io/letsencrypt-staging created
+issuer.cert-manager.io/letsencrypt-prod created
+NAME: joomla
+LAST DEPLOYED: Tue Jun  9 16:31:16 2020
+NAMESPACE: joomla
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+1. Get the Joomla! URL indicated on the Ingress Rule and associate it to your cluster external IP:
+
+   export CLUSTER_IP=$(minikube ip) # On Minikube. Use: `kubectl cluster-info` on others K8s clusters
+   export HOSTNAME=$(kubectl get ingress --namespace joomla joomla -o jsonpath='{.spec.rules[0].host}')
+   echo "Joomla! URL: http://$HOSTNAME/"
+   echo "$CLUSTER_IP  $HOSTNAME" | sudo tee -a /etc/hosts
+
+2. Get your Joomla! login credentials by running:
+
+    echo Username: user
+    echo Password: $(kubectl get secret --namespace joomla joomla -o jsonpath="{.data.joomla-password}" | base64 --decode)
+event "cm-acme-http-solver-56svz.1616ed299533a7f9" deleted
+event "cm-acme-http-solver-56svz.1616ed2a3fdbd12b" deleted
+event "cm-acme-http-solver-56svz.1616ed2a45551594" deleted
+event "cm-acme-http-solver-56svz.1616ed2a5c066ff8" deleted
+event "cm-acme-http-solver-56svz.1616ed2f265d4e73" deleted
+event "cm-acme-http-solver-dx9bx.1616ed299be349f5" deleted
+event "cm-acme-http-solver-dx9bx.1616ed2dafc4b617" deleted
+event "cm-acme-http-solver-dx9bx.1616ed2f2999ab4a" deleted
+event "joomla-8986b5f89-x6k9g.1616ed28a40e32da" deleted
+event "joomla-8986b5f89-x6k9g.1616ed30ece068bf" deleted
+event "joomla-8986b5f89-x6k9g.1616ed30f0685f51" deleted
+event "joomla-8986b5f89-x6k9g.1616ed30ff6214e0" deleted
+event "joomla-8986b5f89-x6k9g.1616ed30ffcbd72c" deleted
+event "joomla-8986b5f89-x6k9g.1616ed31050a18d4" deleted
+event "joomla-8986b5f89-x6k9g.1616ed311256b714" deleted
+event "joomla-8986b5f89-x6k9g.1616ed3940cc613b" deleted
+event "joomla-8986b5f89-x6k9g.1616ed39fec8b54e" deleted
+event "joomla-8986b5f89-x6k9g.1616ed40f9a41e18" deleted
+event "joomla-8986b5f89-x6k9g.1616ed4e3fefa21c" deleted
+event "joomla-8986b5f89.1616ed28a3113677" deleted
+event "joomla-joomla.1616ed289f9347b0" deleted
+event "joomla-joomla.1616ed289fdd8bb0" deleted
+event "joomla-joomla.1616ed28a1172c2d" deleted
+event "joomla.1616ed28a23b1410" deleted
+event "joomla.1616ed28a5988b70" deleted
+event "joomla.1616ed28a6d397e9" deleted
+event "joomla.1616ed2c1ff273ee" deleted
+event "joomla.1616ed2c205cb22b" deleted
+event "joomla.1616ed2c210a011f" deleted
+event "joomla.1616ed2daf7831a0" deleted
+event "joomla.1616ed331f03a5b9" deleted
+event "secret-joomla-1921846722-1136215557-2772934383.1616ed298494aa07" deleted
+event "secret-joomla-1921846722-1136215557-2772934383.1616ed299be33d2e" deleted
+event "secret-joomla-1921846722-1136215557-2772934383.1616ed2f2499b331" deleted
+event "secret-joomla-1921846722-1136215557.1616ed2963e962a6" deleted
+event "secret-joomla-1921846722-1136215557.1616ed2f78873e98" deleted
+event "secret-joomla-1921846722.1616ed28d288dd99" deleted
+event "secret-joomla-1921846722.1616ed2f7a8acbf8" deleted
+event "secret-joomla.1616ed28ced7e0f4" deleted
+event "secret-joomla.1616ed28d0ed5645" deleted
+event "secret-joomla.1616ed2f7d4bc448" deleted
+Error: failed to parse ./values.yaml: error converting YAML to JSON: yaml: line 65: did not find expected key
+event "joomla-8986b5f89-x6k9g.1616ed40f9a41e18" deleted
+event "joomla.1616ed2c1ff273ee" deleted
+Release "joomla" has been upgraded. Happy Helming!
+NAME: joomla
+LAST DEPLOYED: Tue Jun  9 16:42:30 2020
+NAMESPACE: joomla
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+1. Get the Joomla! URL indicated on the Ingress Rule and associate it to your cluster external IP:
+
+   export CLUSTER_IP=$(minikube ip) # On Minikube. Use: `kubectl cluster-info` on others K8s clusters
+   export HOSTNAME=$(kubectl get ingress --namespace joomla joomla -o jsonpath='{.spec.rules[0].host}')
+   echo "Joomla! URL: http://$HOSTNAME/"
+   echo "$CLUSTER_IP  $HOSTNAME" | sudo tee -a /etc/hosts
+
+2. Get your Joomla! login credentials by running:
+
+    echo Username: user
+    echo Password: $(kubectl get secret --namespace joomla joomla -o jsonpath="{.data.joomla-password}" | base64 --decode)

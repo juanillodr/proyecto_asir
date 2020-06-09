@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: joomla
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    cert-manager.io/issuer: "letsencrypt-prod"
+
+spec:
+  tls:
+  - hosts:
+    - joomla.mfv-cloud.store
+    secretName: drupal-tls
+  rules:
+  - host: joomla.mfv-cloud.store
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: joomla
+          servicePort: 80

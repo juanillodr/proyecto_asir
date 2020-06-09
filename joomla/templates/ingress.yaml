@@ -1,0 +1,37 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "joomla.fullname" . }}
+  labels:
+    app: {{ template "joomla.fullname" . }}
+  annotations:
+    {{- if .Values.ingress.certManager }}
+    cert-manager.io/issuer: "letsencrypt-staging"
+    {{- end }}
+spec:
+  tls:
+  - hosts:
+    - {{ .Values.ingress.hostname }}
+    secretName: secret-{{ template "joomla.fullname" . }}
+
+  rules:
+  {{- if .Values.ingress.hostname }}
+  - host: {{ .Values.ingress.hostname }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: "{{ template "joomla.fullname" . }}"
+          servicePort: http
+  {{- end }}
+  {{- range .Values.ingress.hosts }}
+  - host: {{ .name }}
+    http:
+      paths:
+      - path: {{ default "/" .path }}
+        backend:
+          serviceName: "{{ template "joomla.fullname" $ }}"
+          servicePort: http
+  {{- end }}
+{{- end }}

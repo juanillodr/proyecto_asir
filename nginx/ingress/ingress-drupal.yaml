@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: drupal
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    #cert-manager.io/issuer: "letsencrypt-staging"
+
+spec:
+  tls:
+  - hosts:
+    - drupal.mfv-cloud.store
+    secretName: drupal-tls
+  rules:
+  - host: drupal.mfv-cloud.store
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: drupal
+          servicePort: 80

@@ -1,0 +1,13 @@
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-nfs
+spec:
+  accessModes:
+    - ReadWriteMany
+#  persistentVolumeReclaimPolicy: Delete
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: nfs-sc
