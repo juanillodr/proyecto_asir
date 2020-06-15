@@ -229,7 +229,7 @@ Hasta ahora lo que tenemos básicamente es un orquestador que reparte pods entre
 ## 4.1 Helm-v3
 ![install-helm](./imagenes/helm.png)
 
-Helm es un gestor por cli de paquetes para kubernetes, lo instalamos en ubuntu con:
+**Helm** es un gestor por cli de paquetes para kubernetes, lo instalamos en ubuntu con:
 
     sudo snap install helm --classic
 
@@ -251,21 +251,25 @@ Ahora podremos desplegar apps con uno o mas pods con:
 
 ## 4.2 Chartmuseum
 
-Chartmuseum es un gestor de repositorio privado para helm, que incluye el versionado. (similar a gitlab para git)
+**Chartmuseum** es un gestor de repositorio privado para helm, que incluye el versionado. (similar a gitlab para git)
 
 Para instalarlo:
 
     helm install -n repo-local -f values.yaml stable/chartmuseum
 
 Hay que crear un fichero values.yaml (son las variables que se necesitan para configurar la app)
+
 ![install-chartmuseum1](./imagenes/values-chartmuseum.png)
 
-Pero para que los charts que vamos a guardar no desaparezcan al reiniciar el pod, tenemos que crear un volumen de persistencia (pv) y una clase de almacenamiento (sc) en kubernetes:
+Pero para que los charts que vamos a guardar no desaparezcan al reiniciar el pod, tenemos que crear un volumen de persistencia **(pv)** y una clase de almacenamiento **(sc)** en kubernetes:
+
 ![install-chartmuseum2](./imagenes/chartmuseum-crear-sc+pv.jpg)
+
 El sc le indica a kubernetes si es un almacenamiento local, distribuido o en un proveedor de cloud. El pv le indica la porción que vamos a reservar de almacenamiento y los permisos. 
 
 Cuando Chartmuseum esta READY podemos añadirlo a la lista de repositorios de Helm como cualquier repositorio:
     helm repo add "nombre" URL
+
 ![install-chartmuseum3](./imagenes/helm-repo-add.png)
 
 Para subir los charts podemos crear un paquete tgz de nuestro chart con:
@@ -280,7 +284,7 @@ o más simple y rápido instalar el plugin push y hacer helm push:
 
 ![install-chartmuseum4](./imagenes/helm-push-plugin.png)
 
-Después hay que modificar la versión del chart de Chart.yaml y subirlo a nuestro repo.
+Después hay que modificar la versión del chart en Chart.yaml y subirlo a nuestro repo.
 
 ![install-chartmuseum5](./imagenes/subir-chartmuseum.jpg)
 
@@ -289,6 +293,7 @@ Para complementar helm+chartmusem se puede instalara kubeapps (dashboard), con u
 ![install-chartmuseum6](./imagenes/helm-hub.jpg)
 
 Donde puedes ver el estado de los despliegues:
+
 ![install-chartmuseum7](./imagenes/kubeapps6.jpg)
 
 y un editor para modificar los values.yaml de las apps:
@@ -324,7 +329,7 @@ A continuación ejecuto:
 
     desp.sh install percona clúster .
 
-![install-percona4](./imagenes/cluster.jpg)
+![install-percona4](./imagenes/Cluster.jpg)
 
 Como se ve en la captura anterior tengo corriendo en el clúster un conjunto de pods con percona y otros con mariadb ya que todos los cms no lo aceptaban bien (mariadb está corriendo en maestro-esclavo):
 
@@ -391,6 +396,7 @@ Recursos usados en el clúster:
 
 ![drupal6](./imagenes/drupal-up6.jpg)
 
+
 ![joomla1](./imagenes/joomla.jpg)
 
  En joomla la versión de Mariadb que necesita es 10.1.45:
@@ -405,7 +411,8 @@ Joomla expuesto y preparado
 
 ![joomla4](./imagenes/joomla3.jpg)
 
-![magento1](./imagenes/magento.png)
+
+![magento1](./imagenes/Magento.png)
 
 Magento es el CMS más pesado y voraz, de los que he instalado y ademas hace uso de elasticsearch, que se puede hacer externo al despliegue (como la bbdd), pero que no lo he hecho porque el resto de los CMS no lo usan:
 
