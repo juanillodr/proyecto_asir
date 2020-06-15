@@ -194,7 +194,7 @@ Es un requisito desactivar el swap en todos los nodos:
 	
 ### 3.1.4 Inicio del clúster
 
-Iniciamos el máster del clúster: [1](###1)
+Iniciamos el máster del clúster: 
 
 	kubeadm init
 
@@ -295,7 +295,7 @@ y un editor para modificar los values.yaml de las apps:
 
 ![install-chartmuseum8](./imagenes/kubeapps-chartmuseum-install.jpg)
 
-e incluso hacer upgrades y roolback, pero hacerlo así no sería IAAC.
+e incluso hacer upgrades y rollback, pero hacerlo así no sería IAAC.
 
 
 ## 4.3  Percona y Galera
@@ -324,7 +324,7 @@ A continuación ejecuto:
 
     desp.sh install percona clúster .
 
-![install-percona4](./imagenes/clúster.jpg)
+![install-percona4](./imagenes/cluster.jpg)
 
 Como se ve en la captura anterior tengo corriendo en el clúster un conjunto de pods con percona y otros con mariadb ya que todos los cms no lo aceptaban bien (mariadb está corriendo en maestro-esclavo):
 
@@ -546,20 +546,7 @@ Por orden:
 
 
 # 8. Problemas
-
 # 9. Glosario
 # 10. webgrafia
 
-### 1 [Instalación Kubernetes con Kubeadm](https://kubernetes.io/docs/setup/independent/install-kubeadm/)
 
-[2][Configuración CRI Kubernetes](https://kubernetes.io/docs/setup/cri/)
-
-[3][Creación de un clúster Kubernetes con Kubeadm](https://kubernetes.io/docs/setup/independent/create-clúster-kubeadm/)
-
-[4] [Proyecto Helm-almacenamiento local privado] (https://github.com/helm/charts/tree/máster/stable/chartmuseum#using-with-local-filesystem-storage)
-
-[5] [Documentación AWS]
-
-[6] [Documentación AWS ECS]
-
-[Introducción Kubeadm](https://blogs.vmware.com/opensource/2018/10/04/open-source-kubeadm-introduction/)
